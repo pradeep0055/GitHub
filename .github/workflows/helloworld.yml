@@ -1,0 +1,17 @@
+
+
+name: Gh-Runner setup
+
+
+on: [push]
+
+jobs:
+  clean_workdirs:
+    timeout-minutes: 10
+    name: cleanup
+    runs-on: OSS2
+    steps:
+    - name: echo
+      run: echo "hello world"
+    - name: sleep
+      run: sleep 10s
