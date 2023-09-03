@@ -9,7 +9,7 @@ jobs:
   clean_workdirs:
     timeout-minutes: 10
     name: cleanup
-    runs-on: OSS2
+    runs-on: ip-10-0-0-105-1
     steps:
     - name: echo
       run: echo "hello world"
