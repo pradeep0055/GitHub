@@ -9,9 +9,6 @@ jobs:
   clean_workdirs:
     timeout-minutes: 10
     name: cleanup
-    runs-on: ip-10-0-0-105-1
     steps:
     - name: echo
-      run: echo "hello world"
-    - name: sleep
-      run: sleep 10s
+      run: echo {{ env.PRADEEP }}
