@@ -15,8 +15,7 @@ jobs:
   clean_workdirs:
     timeout-minutes: 10
     name: cleanup
-    runs-on:
-      group: 'ubuntu-latest'
+    runs-on: ubuntu-latest
     steps:
     - name: Ubuntu
       if: ${{ inputs.runner_group == 'ubuntu-latest' }} 
