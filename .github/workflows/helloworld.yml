@@ -11,5 +11,9 @@ jobs:
     name: cleanup
     runs-on: ubuntu-latest
     steps:
-    - name: echo
+    - name: echo ${{ vars.PRADEEP }}
+      run: echo ${{ vars.PRADEEP }}
+    - name: hello
+      run: echo hello
+    - name: Print statement
       run: echo ${{ env.PRADEEP }}
