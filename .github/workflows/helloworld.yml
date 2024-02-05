@@ -9,6 +9,7 @@ jobs:
   clean_workdirs:
     timeout-minutes: 10
     name: cleanup
+    runs-on: ubuntu
     steps:
     - name: echo
       run: echo {{ env.PRADEEP }}
