@@ -3,17 +3,23 @@
 name: Gh-Runner setup
 
 
-on: [push]
+on:
+  workflow_call:
+    inputs:
+      runner_group:
+        required: true
+        type: string
 
 jobs:
   clean_workdirs:
     timeout-minutes: 10
     name: cleanup
-    runs-on: ubuntu-latest
+    runs-on:
+      group: 'ubuntu-latest'
     steps:
-    - name: echo ${{ vars.PRADEEP }}
-      run: echo ${{ vars.PRADEEP }}
-    - name: hello
-      run: echo hello
-    - name: Print statement
-      run: echo ${{ env.PRADEEP }}
+    - name: Ubuntu
+      if: ${{ inputs.runner_group == 'ubuntu-latest' }} 
+      run: echo 'ubuntu'
+    - name: Centos
+      if: ${{ inputs.runner_group != 'ubuntu-latest' }} 
+      run: echo 'centos'
